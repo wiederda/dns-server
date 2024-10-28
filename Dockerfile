@@ -1,8 +1,10 @@
 # Use the .NET SDK as the base image
-FROM mcr.microsoft.com/dotnet/aspnet:8.0.6-jammy-amd64 as base
+# https://mcr.microsoft.com/en-us/artifact/mar/dotnet/aspnet/tags
+FROM mcr.microsoft.com/dotnet/aspnet:8.0.10-jammy-amd64 as base
 
 # Use the .NET SDK to build the application
-FROM mcr.microsoft.com/dotnet/sdk:8.0.302-jammy-amd64 as build
+# https://mcr.microsoft.com/en-us/artifact/mar/dotnet/sdk/tags
+FROM mcr.microsoft.com/dotnet/sdk:8.0.403-jammy-amd64 as build
 RUN apt-get update && apt-get install -y git
 WORKDIR /home/download
 
